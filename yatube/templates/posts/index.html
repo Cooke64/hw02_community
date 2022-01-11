@@ -10,10 +10,12 @@
             </li>
           </ul>
           <p>{{ post.text }}</p>
-          <a href="{% url 'post:group' post.group.slug %}">все записи группы</a>
-        {% if not forloop.last %}
-        <hr>
-        {% endif %}
+            {% if post.group %}
+              <a href="{% url 'post:group' post.group.slug %}">все записи группы</a>
+            {% endif %}
+            {% if not forloop.last %}
+              <hr>
+            {% endif %}
         {% endfor %}
 
   {% endblock %}

@@ -21,7 +21,8 @@ def group_posts(request, slug):
     template = 'posts/group_list.html'
     title = 'Записи сообщества'
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:amount_posts]
+    get_posts = Post.objects.filter(group=group)
+    posts = get_posts.order_by('-pub_date')[:amount_posts]
     context = {
         'title': title,
         'group': group,
