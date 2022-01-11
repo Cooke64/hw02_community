@@ -2,7 +2,7 @@
   {% block content %}
     {% for item in posts %}
       <h1>{{ item.group.title }}</h1>
-      <p>{ item.group.description }}</p>
+      <p>{{ item.group.description }}</p>
     {% endfor %}
     {% for post in posts %}
       <ul>
