@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Group, Post
 
 
@@ -22,6 +23,7 @@ class GroupAdmin(admin.ModelAdmin):
         'slug',
         'description',
     )
+    prepopulated_fields = {"slug": ("slug",)}
 
 
 admin.site.register(Post, PostAdmin)
